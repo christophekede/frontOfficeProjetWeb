@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FrontofficeApplication<frontoffice>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.kede.frontoffice.FrontofficeApplication",
+            "projectName": "frontoffice",
+            "args": ""
+        }
+    ]
+}
