@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @CrossOrigin
-public class SurveyController {
+public class SignUpController {
 
-    @GetMapping("/survey")
+    @GetMapping("/signup")
     public String showSurvey(Model model) {
-        return "survey";
+        return "signup";
     }
 }
