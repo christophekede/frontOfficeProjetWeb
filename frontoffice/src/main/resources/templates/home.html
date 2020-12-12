@@ -20,10 +20,8 @@
       <div class="form-group">
         <div class="text-center">
           <h1>Liste des sondages</h1>
-          <ul>
-              <li> <a href="/survey" >Aimeriez vous faire la reunion pour le projet web ...</a><li>
-              <li> <a href="/survey" >Aimeriez vous faire la reunion pour le projet web ...</a><li></li>
-              <li> <a href="/survey" >Aimeriez vous faire la reunion pour le projet web ...</a><li></li>
+          <ul id="sondages">
+            
           </ul>
       </div>
        
@@ -35,7 +33,20 @@
     </div>
   </div>
     <script>
-      console.log("ok")
+     fetch("http://localhost:9191/surveys", {}).then(data=>data.json()).then(res=>{   
+      if(res){
+        resParse = Array.from(res)
+        resParse.forEach(el => {
+          let li = document.createElement("li");
+          
+          let text = `<a href="/survey?id=${el.id}" >Rendez vous à <span id="lieu">${el.lieu} </span>  pour <span>${el.description}</span>...</a>`
+          li.innerHTML= text
+        
+          document.getElementById("sondages").appendChild(li)
+        });
+      }
+    
+    })
     </script>
 </body>
 </html>
